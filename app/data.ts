@@ -2,17 +2,20 @@ type Project = {
   name: string
   description: string
   link: string
-  video: string
+  image: string
   id: string
 }
 
 type WorkExperience = {
   company: string
-  title: string
-  start: string
-  end: string
+  location?: string
   link: string
   id: string
+  roles: {
+    title: string
+    start: string
+    end: string
+  }[]
 }
 
 type BlogPost = {
@@ -29,97 +32,120 @@ type SocialLink = {
 
 export const PROJECTS: Project[] = [
   {
-    name: 'Motion Primitives Pro',
-    description:
-      'Advanced components and templates to craft beautiful websites.',
-    link: 'https://pro.motion-primitives.com/',
-    video:
-      'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/newProfileItem/d898be8a-7037-4c71-af0c-8997239b050d.mp4?_a=DATAdtAAZAA0',
+    name: 'FitMate: Your Fitness Journey',
+    description: 'Personalized fitness app for all levels.',
+    link: 'https://fitmateai.app/',
+    image: 'https://fitmateai.app/fitmate-card.png',
     id: 'project1',
-  },
-  {
-    name: 'Motion Primitives',
-    description: 'UI kit to make beautiful, animated interfaces.',
-    link: 'https://motion-primitives.com/',
-    video:
-      'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/XSfIvT7BUWbPRXhrbLed/ee6871c9-8400-49d2-8be9-e32675eabf7e.mp4?_a=DATAdtAAZAA0',
-    id: 'project2',
   },
 ]
 
 export const WORK_EXPERIENCE: WorkExperience[] = [
   {
-    company: 'Reglazed Studio',
-    title: 'CEO',
-    start: '2024',
-    end: 'Present',
-    link: 'https://ibelick.com',
+    company: 'Otio',
+    location: 'London, United Kingdom',
+    link: 'https://otio.ai',
     id: 'work1',
+    roles: [
+      {
+        title: 'Chief Technology Officer',
+        start: 'January 2025',
+        end: 'Present',
+      },
+      {
+        title: 'Head of Engineering',
+        start: 'October 2023',
+        end: 'January 2025',
+      },
+    ],
   },
   {
-    company: 'Freelance',
-    title: 'Design Engineer',
-    start: '2022',
-    end: '2024',
-    link: 'https://ibelick.com',
+    company: 'Striga (YC W21)',
+    link: 'https://striga.com',
+    location: 'Tallinn, Estonia',
     id: 'work2',
+    roles: [
+      {
+        title: 'VP of Engineering',
+        start: 'April 2022',
+        end: 'May 2023',
+      },
+    ],
   },
   {
-    company: 'Freelance',
-    title: 'Front-end Developer',
-    start: '2017',
-    end: 'Present',
-    link: 'https://ibelick.com',
+    company: 'Lastbit/Striga (YC W21)',
+    link: 'https://striga.com',
     id: 'work3',
+    location: 'Tallinn, Estonia & Bangalore, India',
+    roles: [
+      {
+        title: 'Senior Software Engineer',
+        start: 'April 2021',
+        end: 'April 2022',
+      },
+      {
+        title: 'Mobile Software Engineer',
+        start: 'June 2019',
+        end: 'April 2021',
+      },
+    ],
+  },
+  {
+    company: 'Upwork/Groovecat/GroceriStar',
+    link: 'https://upwork.com',
+    id: 'work4',
+    location: 'Remote',
+    roles: [
+      {
+        title: 'Freelance Developer',
+        start: 'August 2018',
+        end: 'May 2019',
+      },
+    ],
   },
 ]
 
 export const BLOG_POSTS: BlogPost[] = [
   {
-    title: 'Exploring the Intersection of Design, AI, and Design Engineering',
-    description: 'How AI is changing the way we design',
-    link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
-    uid: 'blog-1',
-  },
-  {
-    title: 'Why I left my job to start my own company',
+    title: 'FitMate AI: Personalizing Fitness Through AI',
     description:
-      'A deep dive into my decision to leave my job and start my own company',
-    link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
-    uid: 'blog-2',
-  },
-  {
-    title: 'What I learned from my first year of freelancing',
-    description:
-      'A look back at my first year of freelancing and what I learned',
-    link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
+      'Built an AI-powered fitness app that got 1k+ downloads in 2 months.',
+    link: '/blog/fitmate-ai-personalizing-fitness',
     uid: 'blog-3',
   },
   {
-    title: 'How to Export Metadata from MDX for Next.js SEO',
-    description: 'A guide on exporting metadata from MDX files to leverage Next.js SEO features.',
-    link: '/blog/example-mdx-metadata',
-    uid: 'blog-4',
+    title: 'Striga Dashboard: From B2C to B2B',
+    description:
+      "Building B2B dashboard while getting Estonia's first crypto license.",
+    link: '/blog/striga-dashboard-b2c-to-b2b',
+    uid: 'blog-2',
+  },
+  {
+    title: 'My Mobile Dev Journey: Lastbit to Striga',
+    description:
+      'How I built crypto wallets and banking apps at Lastbit & Striga.',
+    link: '/blog/my-journey-lastbit-striga',
+    uid: 'blog-1',
   },
 ]
 
 export const SOCIAL_LINKS: SocialLink[] = [
   {
-    label: 'Github',
-    link: 'https://github.com/ibelick',
-  },
-  {
     label: 'Twitter',
-    link: 'https://twitter.com/ibelick',
-  },
-  {
-    label: 'LinkedIn',
-    link: 'https://www.linkedin.com/in/ibelick',
+    link: 'https://twitter.com/skdev24',
   },
   {
     label: 'Instagram',
-    link: 'https://www.instagram.com/ibelick',
+    link: 'https://www.instagram.com/crypto.dev/',
+  },
+  {
+    label: 'Github',
+    link: 'https://github.com/skdev24',
+  },
+  {
+    label: 'LinkedIn',
+    link: 'https://www.linkedin.com/in/skdev24',
   },
 ]
 
-export const EMAIL = 'your@email.com'
+export const EMAIL = 'skdev24@gmail.com'
